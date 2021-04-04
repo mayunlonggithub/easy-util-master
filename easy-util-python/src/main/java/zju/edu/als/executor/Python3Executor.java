@@ -26,7 +26,7 @@ public final class Python3Executor extends AbstractExecutor {
 
     @Override
     public String name() {
-        return Executors.PYTHON3.getId();
+        return Executors.PYTHON.getId();
     }
 
     private static class Holder {
@@ -38,7 +38,9 @@ public final class Python3Executor extends AbstractExecutor {
     }
 
     public <T> T execute(Class<T> resType, String... cmd) throws ExecuteException {
+        System.out.println(cmd[0]);
         String text = execute(complete(cmd));
+        // System.out.println(text);
         JSONObject jsonObject = JSONObject.parseObject(text.trim());
         return jsonObject.toJavaObject(resType);
     }

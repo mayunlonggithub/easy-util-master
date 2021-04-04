@@ -67,7 +67,7 @@ public abstract class AbstractExecutor implements Executor {
         List<String> list = new ArrayList<>();
         list.add(name());
         for (int i = 0; i < cmd.length; i++) {
-            list.add(cmd[0]);
+            list.add(cmd[i]);
         }
         String[] temp = new String[list.size()];
         return list.toArray(temp);

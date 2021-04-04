@@ -5,8 +5,8 @@ package zju.edu.als.util;
  * @create 2019-09-13 20:08
  */
 public enum Executors {
-    PYTHON,
-    PYTHON3,
+    PYTHON2,
+    PYTHON,//python or python3 depends on your platform
     GENERAL;
 
     private Executors() {
