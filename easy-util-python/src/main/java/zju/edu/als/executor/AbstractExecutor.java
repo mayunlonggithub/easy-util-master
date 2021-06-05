@@ -48,9 +48,9 @@ public abstract class AbstractExecutor implements Executor {
         }
         String text;
         try {
-            if (ProcessUtil.isError(process)) {
-                throw new ProcessErrorException(cmd[1]);
-            }
+            // if (ProcessUtil.isError(process)) {
+            //     throw new ProcessErrorException(cmd[1]);
+            // }
             text = ProcessUtil.getResultFrom(process, onlyLastLine);
         } catch (IOException e) {
             throw new ProcessErrorException();
