@@ -48,14 +48,15 @@ public abstract class AbstractExecutor implements Executor {
         }
         String text;
         try {
-            if (ProcessUtil.isError(process)) {
-                throw new ProcessErrorException(cmd[1]);
-            }
+            // if (ProcessUtil.isError(process)) {
+            //     throw new ProcessErrorException(cmd[1]);
+            // }
             text = ProcessUtil.getResultFrom(process, onlyLastLine);
         } catch (IOException e) {
             throw new ProcessErrorException();
         }
         if (code != 0) {
+            System.out.println(code);
             throw new CodeNotZeroException();
         }
         time = System.currentTimeMillis() - time;
@@ -67,7 +68,7 @@ public abstract class AbstractExecutor implements Executor {
         List<String> list = new ArrayList<>();
         list.add(name());
         for (int i = 0; i < cmd.length; i++) {
-            list.add(cmd[0]);
+            list.add(cmd[i]);
         }
         String[] temp = new String[list.size()];
         return list.toArray(temp);

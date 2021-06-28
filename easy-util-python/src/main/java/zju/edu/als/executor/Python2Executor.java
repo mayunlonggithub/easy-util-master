@@ -25,7 +25,7 @@ public final class Python2Executor extends AbstractExecutor {
 
     @Override
     public String name() {
-        return Executors.PYTHON.getId();
+        return Executors.PYTHON3.getId();
     }
 
     private static class Holder {
